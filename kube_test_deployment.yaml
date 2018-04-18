@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: kube-test
+  name: kube-test-deploy
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: kube-test
+    spec:
+      containers:
+      - args:
+        - gunicorn
+        - app:app
+        - -b
+        - 0.0.0.0:8080
+        - --log-level
+        - DEBUG
+        image: pqcsdockerhub/kube-test
+        name: kube-test-ct
+        ports:
+        - containerPort: 8080
+        resources: {}
+      restartPolicy: Always
+status: {}

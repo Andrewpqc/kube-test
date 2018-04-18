@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: kube-test
+  name: kube-test-svc
+spec:
+  type: NodePort
+  ports:
+  - name: "8090"
+    port: 8090
+    targetPort: 8080
+  selector:
+    run: kube-test
+status:
+  loadBalancer: {}
