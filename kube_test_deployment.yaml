@@ -22,10 +22,11 @@ spec:
         - 0.0.0.0:8080
         - --log-level
         - DEBUG
-        image: pqcsdockerhub/kube-test
+        image: registry.cn-shenzhen.aliyuncs.com/asynccnu2/andrew
         name: kube-test-ct
         ports:
         - containerPort: 8080
         resources: {}
       restartPolicy: Always
 status: {}
+
