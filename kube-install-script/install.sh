@@ -93,7 +93,7 @@ done
 
 
 echo "配置kubelet"
-Test cat > /etc/systemd/system/kubelet.service.d/20-pod-infra-image.conf <<EOF
+cat > /etc/systemd/system/kubelet.service.d/20-pod-infra-image.conf <<EOF
 [Service]
 Environment="KUBELET_EXTRA_ARGS=--pod-infra-container-image=gcr.io/google_containers/pause-amd64:3.0"
 EOF
